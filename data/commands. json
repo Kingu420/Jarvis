@@ -1,0 +1,20 @@
+{
+  "greetings": {
+    "hi": "say:Hello!",
+    "hello": "say:Hi there!",
+    "how are you": "say:I'm always ready to help."
+  },
+  "apps": {
+    "open chrome": "open_app:chrome",
+    "open notepad": "open_app:notepad",
+    "open calculator": "open_app:calc"
+  },
+  "search": {
+    "search python": "google:python programming",
+    "search elon musk": "wiki:Elon Musk",
+    "search github ai": "github:AI projects"
+  }, 
+  "learned": {
+  }
+  
+}

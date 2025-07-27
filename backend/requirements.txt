@@ -1,0 +1,9 @@
+SpeechRecognition
+pyttsx3
+pyaudio
+wikipedia
+requests
+fuzzywuzzy
+python-Levenshtein
+pyautogui
+keyboard
