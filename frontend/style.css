@@ -1,58 +1,96 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #1a1a2e;
-  color: #eaeaea;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  overflow: hidden;
   height: 100vh;
+  position: relative;
 }
 
-.container {
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* 💡 Blob effect */
+.blob-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow-blob {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #00f2ff, #0049ff);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatBlob 8s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+@keyframes floatBlob {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -60%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* 🎯 Jarvis container */
+.jarvis-box {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px 20px;
+  max-width: 800px;
+  margin: auto;
   text-align: center;
-  background: #16213e;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  width: 90%;
-  max-width: 500px;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #00adb5;
+/* 💬 Input styling */
+.input-group input {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.input-group button {
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
-input[type="text"] {
-  width: 80%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px 20px;
-  background: #00adb5;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s ease;
-}
-
-button:hover {
-  background: #03c8d0;
-}
-
-#response {
-  margin-top: 20px;
-  padding: 15px;
-  background: #0f3460;
+/* 📦 Chat Box */
+#chat-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
   border-radius: 10px;
-  color: #f9f9f9;
+  padding: 20px;
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 30px;
+  text-align: left;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* 🧠 Chat Bubbles */
+#chat-box div {
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #00f2ff;
+  border-radius: 5px;
+}
+
+/* 🖋 Typewriter Cursor */
+.typewriter::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
 }
